@@ -5,7 +5,10 @@ body {
 }
 
 #root {
-
+  background-image: url("../../public/Banknotes-world.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .App {
   text-align: left;
@@ -13,15 +16,17 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
-  background-image: linear-gradient(180deg, #E8E8E8 0%, #E8E8E8 70%, #B2FCD3 100%);
+  background-image: linear-gradient(180deg, #fff 0%, #E8E8E8 70%, #8ecaa9 100%);
 }
 .App-header h1 {
   text-align: center;
   font-weight: 700;
   margin-top: 0;
+  color: #597E6A;
 }
 .App-header .subhead {
   font-size: .8rem;
+  text-align: center;
 }
 
 .App-link {
@@ -37,13 +42,12 @@ h3 {
   flex-direction:column;
 }
 .Dropdown-root {
-  /* width: 100%; */
   max-width: 250px;
   text-align:left;
   padding: 5px;
   margin: 5px 0 15px;
   border-radius: 3px;
-  border: 1px solid grey;
+  border: 1px solid #8ecaa9;
   background-color: #fff;
 }
 .Dropdown-control {
@@ -67,18 +71,20 @@ h3 {
 }
 
 .currency__input input {
+  display: block;
   margin: 15px 0;
   border-radius: 3px;
-  border: 1px solid grey;
-  height: 25px;
-  width: 100%;
+  border: 1px solid #8ecaa9;
+  height: 20px;
+  padding: 5px;
+  width: 250px;
 }
 .currency__input button {
-  background-color: #B2FCD3;
+  background-color: #8ecaa9;
   font-weight:700;
   border-radius: 3px;
   font-size: 1.1rem;
-  border: 1px solid grey;
+  border: none;
   height: 40px;
   width: 100%;
   padding: 5px;
@@ -97,6 +103,7 @@ h3 {
   margin-top: 10px;
 }
 .footer {
+  padding-top: 2vh;
   text-align: center;
   font-size: .7rem;
 }

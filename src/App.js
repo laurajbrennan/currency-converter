@@ -71,12 +71,12 @@ function App() {
         </div>
         <div className="currency__input">
           <h3>Amount to Convert</h3>
-          <div>
+          
             <input type="text" 
              placeholder="Enter the amount" 
              onChange={(e) => setInput(e.target.value)} />
             <button onClick={()=>{convert()}}>Convert</button>
-          </div>
+          
         </div>
         <div className="result">
           <h3>Result</h3>
