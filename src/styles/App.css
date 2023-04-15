@@ -13,26 +13,39 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currency__dropdowns {
+  display: flex;
+  flex-direction:column;
+}
+.Dropdown-root {
+    width: 250px;
+    text-align:left;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+.Dropdown-control {
+  position:relative;
+}
+.Dropdown-arrow {
+  font-size: 16px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("../../public/chevron.png");
+  height: 18px;
+  width: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Dropdown-root.is-open .Dropdown-arrow {
+    background-image: url("../../public/chevron-up.png")
 }
