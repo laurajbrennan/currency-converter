@@ -3,20 +3,21 @@ import { useEffect, useState } from 'react';
 import Dropdown from 'react-dropdown';
 
 function App() {
-  const [currencies, setCurr] = useState([]);
-  const [input, setInput] = useState(0);
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
-  const [output, setOutput] = useState(0);
+  const [currencies, setCurr] = useState([]); //list of currencies in "XXX - Name" format
+  const [input, setInput] = useState(0); //what the user types in the input box
+  const [from, setFrom] = useState(""); //baseline currency
+  const [to, setTo] = useState(""); //currency to convert to
+  const [output, setOutput] = useState(0); //result of the currency calculation
 
-
+  // calling the API for the list of currencies on page load
   const fetchCountries = () => {
       fetch("https://v6.exchangerate-api.com/v6/aa4428a6724e9cb84df1170f/codes")
           .then((response) => response.json())
           .then((data) => {
-              // console.log(data.supported_codes);
+              // data is an array of arrays, so this loops through and joins each one of those arrays into a string
               const dataPretty = data.supported_codes.map(arr => arr.join(" - "))
-              // console.log(dataPretty)
+
+              // once that's done, set state with the cleaned up data so that Dropdowns can populate from this source
               setCurr(dataPretty);
           });
   }
@@ -24,18 +25,24 @@ function App() {
     fetchCountries();
   }, []);
 
+  // declaring the API call to get the pair conversion endpoint and making the calculation
   const calculateConv = (url) => {
     fetch(url).then((response) => response.json()).then((data) => {
-              console.log(data.conversion_rate);
+              // data.conversion_rate is the conversion rate, based on the "from" currency, storing that in a variable for ease of use
               var rate = data.conversion_rate;
+
+              // set the state to contain the output amount, aka the input number multiplied by the rate
               setOutput(input * rate);
           });
   }
 
+  // when the convert button is pressed, this function grabs the currency code from state and concatenates the URL for the API call, then calls the final calculation function
   function convert() {
+    // the "from" and "to" in state are in "ABC - Name" format, so for the API call we just need the first three letters of the string
     const fromCode = from.slice(0,3);
     const toCode = to.slice(0,3);
-    console.log(fromCode, toCode);
+
+    // now we store the URL for the API call in a variable, adding the codes from above to make the correct call 
     const url = "https://v6.exchangerate-api.com/v6/aa4428a6724e9cb84df1170f/pair/"+fromCode+"/"+toCode;
     calculateConv(url);
   }
