@@ -1,5 +1,5 @@
 import './styles/App.css';
-import dropdown from './components/dropdown';
+import Dropdown from './components/Dropdown';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         
       </header>
       <main>
-        {dropdown}
+        <Dropdown />
       </main>
     </div>
   );
