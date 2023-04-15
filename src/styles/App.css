@@ -1,21 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+#root {
+
+}
 .App {
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  background-image: linear-gradient(180deg, #E8E8E8 0%, #E8E8E8 70%, #B2FCD3 100%);
+}
+.App-header h1 {
   text-align: center;
+  font-weight: 700;
+  margin-top: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header .subhead {
+  font-size: .8rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 
 .App-link {
-  color: #61dafb;
+  color: #0615A2;
+
+}
+h3 {
+  margin-bottom:0;
 }
 
 .currency__dropdowns {
@@ -23,12 +37,14 @@
   flex-direction:column;
 }
 .Dropdown-root {
-    width: 250px;
-    text-align:left;
-    padding: 5px;
-    margin: 15px;
-    border-radius: 3px;
-    border: 1px solid grey;
+  /* width: 100%; */
+  max-width: 250px;
+  text-align:left;
+  padding: 5px;
+  margin: 5px 0 15px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  background-color: #fff;
 }
 .Dropdown-control {
   position:relative;
@@ -47,5 +63,40 @@
   background-size: cover;
 }
 .Dropdown-root.is-open .Dropdown-arrow {
-    background-image: url("../../public/chevron-up.png")
+  background-image: url("../../public/chevron-up.png")
+}
+
+.currency__input input {
+  margin: 15px 0;
+  border-radius: 3px;
+  border: 1px solid grey;
+  height: 25px;
+  width: 100%;
+}
+.currency__input button {
+  background-color: #B2FCD3;
+  font-weight:700;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  border: 1px solid grey;
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.result_input {
+  margin: 10px 0;
+}
+.result_equals {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+.result_output {
+  margin-top: 10px;
+}
+.footer {
+  text-align: center;
+  font-size: .7rem;
 }

@@ -45,11 +45,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <h1>What's It Worth?</h1>
+        <p className="subhead"><em>A simple currency converter</em></p>
       </header>
       <main>
         <div className="currency__dropdowns">
           <div className="currency_from">
+            <h3>From</h3>
             <Dropdown options={currencies} 
               onChange={(e) => { setFrom(e.value) }}
               value={from} placeholder="From" 
@@ -57,6 +59,7 @@ function App() {
             />
           </div>
           <div className="currency_to">
+            <h3>To</h3>
             <Dropdown options={currencies} 
               onChange={(e) => {setTo(e.value)}} 
               value={to} placeholder="To" 
@@ -68,17 +71,24 @@ function App() {
         </div>
         <div className="currency__input">
           <h3>Amount to Convert</h3>
-          <input type="text" 
+          <div>
+            <input type="text" 
              placeholder="Enter the amount" 
              onChange={(e) => setInput(e.target.value)} />
+            <button onClick={()=>{convert()}}>Convert</button>
+          </div>
         </div>
         <div className="result">
-          <button onClick={()=>{convert()}}>Convert</button>
-          <h3>Converted Amount:</h3>
-          <p>{input+" "+from+" = "+output.toFixed(2) + " " + to}</p>
-    
+          <h3>Result</h3>
+          <p className="result_input">{input+" "+from}</p>
+          <p className="result_equals">=</p>
+          <p className="result_output">{output.toFixed(2) + " " + to}</p>
         </div>
       </main>
+      <footer className="footer">
+        <p>Made by Laura Brennan using create-react-app and react-dropdown</p>
+        <p>Created with thanks to <a href="https://www.geeksforgeeks.org/how-to-create-a-currency-converter-app-in-reactjs/" target="_blank">this GeeksforGeeks article</a> for the inspiration and insight</p>
+      </footer>
     </div>
   );
 }
