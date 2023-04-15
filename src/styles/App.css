@@ -1,38 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+#root {
+  background-color: #597E6A;
+}
+
 .App {
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  background-image: linear-gradient(180deg, #fff 0%, #E8E8E8 70%, #8ecaa9 100%);
+}
+.App-header h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0;
+  color: #597E6A;
+}
+.App-header .subhead {
+  font-size: .8rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
-  color: #61dafb;
+  color: #0615A2;
+
+}
+h3 {
+  margin-bottom:0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currency__dropdowns {
+  display: flex;
+  flex-direction:column;
+}
+.Dropdown-root {
+  max-width: 250px;
+  text-align:left;
+  padding: 5px;
+  margin: 5px 0 15px;
+  border-radius: 3px;
+  border: 1px solid #8ecaa9;
+  background-color: #fff;
+}
+.Dropdown-control {
+  position:relative;
+}
+.Dropdown-arrow {
+  font-size: 16px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("../../public/chevron.png");
+  height: 18px;
+  width: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Dropdown-root.is-open .Dropdown-arrow {
+  background-image: url("../../public/chevron-up.png")
+}
+
+.currency__input input {
+  display: block;
+  margin: 15px 0;
+  border-radius: 3px;
+  border: 1px solid #8ecaa9;
+  height: 20px;
+  padding: 5px;
+  width: 250px;
+}
+.currency__input button {
+  background-color: #8ecaa9;
+  font-weight:700;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  border: none;
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.result_input {
+  margin: 10px 0;
+}
+.result_equals {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+.result_output {
+  margin-top: 10px;
+}
+.footer {
+  padding-top: 2vh;
+  text-align: center;
+  font-size: .7rem;
 }
