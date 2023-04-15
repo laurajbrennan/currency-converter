@@ -5,11 +5,9 @@ body {
 }
 
 #root {
-  background-image: url("../../public/Banknotes-world.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #597E6A;
 }
+
 .App {
   text-align: left;
   max-width: 600px;
